@@ -29,6 +29,8 @@ def tensor_to_image(tensor):
     Returns:
     - ndarr: A uint8 numpy array of shape (H, W, 3)
     """
+    # PS：clamp函数将输入input张量每个元素的范围限制在区间[min,max]中
+    # 参考：https://blog.csdn.net/hb_learing/article/details/115696206
     tensor = tensor.mul(255).add_(0.5).clamp_(0, 255).permute(1, 2, 0)
     ndarr = tensor.to("cpu", torch.uint8).numpy()
     return ndarr

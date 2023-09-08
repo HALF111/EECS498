@@ -1,0 +1,6 @@
+*.tar.gz
+__pycache__
+/checkpoints
+
+# Assignment1
+cifar-10-batches-py
